@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XT-IndoorKush - Cannabis Config Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>
+      <svg class="leaf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+      </svg>
+      XT-IndoorKush
+    </h1>
+
+    <div id="weeks-container"></div>
+
+    <div class="buttons-container">
+      <button class="button button-purple" onclick="addWeek()">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></svg>
+        Add Week
+      </button>
+      <button class="button button-outline" onclick="removeWeek()" id="remove-btn">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/></svg>
+        Remove Week
+      </button>
+      <button class="button button-purple button-large" onclick="generateConfig()">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+          <polyline points="14,2 14,8 20,8"/>
+        </svg>
+        Generate config.h
+      </button>
+    </div>
+
+    <div id="code-section" class="code-section card" style="display: none;">
+      <div class="code-header">
+        <h3>Generated config.h file</h3>
+        <button class="button button-outline" onclick="copyToClipboard(event)">
+          Copy to clipboard
+        </button>
+      </div>
+      <textarea id="generated-code" class="textarea" readonly placeholder="Generated code will appear here..."></textarea>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
