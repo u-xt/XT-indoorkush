@@ -1,0 +1,230 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --background: #252730;
+  --foreground: #f8f9fa;
+  --card: #2d3038;
+  --card-foreground: #f8f9fa;
+  --primary: #f8f9fa;
+  --primary-foreground: #1a1b23;
+  --secondary: #404454;
+  --secondary-foreground: #f8f9fa;
+  --muted: #404454;
+  --muted-foreground: #b0b3c1;
+  --accent: #404454;
+  --accent-foreground: #f8f9fa;
+  --border: #404454;
+  --input: #404454;
+  --input-background: #35373f;
+  --purple-600: #9333ea;
+  --purple-700: #7c3aed;
+  --purple-400: #c084fc;
+  --green-500: #10b981;
+  --radius: 0.625rem;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--purple-600);
+  text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.leaf-icon {
+  width: 4rem;
+  height: 4rem;
+  color: var(--green-500);
+}
+
+.card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.field-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.field-description {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+.input {
+  background-color: var(--input-background);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 2px);
+  padding: 0.5rem 0.75rem;
+  color: var(--foreground);
+  font-size: 1rem;
+}
+
+.input:focus {
+  outline: 2px solid var(--purple-600);
+  outline-offset: 2px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: calc(var(--radius) - 2px);
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.button-purple {
+  background-color: var(--purple-600);
+  color: white;
+}
+
+.button-purple:hover:not(:disabled) {
+  background-color: var(--purple-700);
+}
+
+.button-outline {
+  border: 1px solid var(--purple-600);
+  color: var(--purple-400);
+  background-color: transparent;
+}
+
+.button-outline:hover:not(:disabled) {
+  background-color: var(--purple-600);
+  color: white;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button-large {
+  padding: 0.75rem 2rem;
+}
+
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 400px;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 2px);
+  padding: 1rem;
+  color: var(--foreground);
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  resize: vertical;
+}
+
+.code-section {
+  margin-top: 2rem;
+}
+
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .leaf-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .buttons-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
